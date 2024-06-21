@@ -1,18 +1,20 @@
 items = [1, 2, 3, 4, 5, 6, 7, 8]
 
-items_dict = dict()
+items = ['bob', 'jack']
 
-for num, val in enumerate(items):
-    items_dict[num] = val
+size_items = int(len(items))
 
-size = int(len(items_dict))
+indic = False
 
-rango_1 = list(range(0,int(size/2)))
+if indic == True:
+    items_0 = items[:int(size_items/2)]
+    items_1 = items[int(size_items/2):]
+elif indic == False:
+    items_1 = items[:int(size_items/2)]
+    items_0 = items[int(size_items/2):]
 
-rango_2 = list(range(int(size/2),size))
+items_comp = [items_0, items_1]
 
-new = []
+new = [[row[i] for row in items_comp] for i in range(int(len(items_0)))]
 
-for i in range(int(size/2)):
-    new.append(items_dict[rango_1[i]])    
-    new.append(items_dict[rango_2[i]])
+new_final = [num for elem in new for num in elem]
